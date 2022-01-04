@@ -7,6 +7,7 @@ module.exports = {
     module: {
         rules: [
             { test: /\.tsx?$/, loader: "ts-loader" },
+            { test: /\.tsx?$/, use: "react-hot-loader/webpack", include: /node_modules/ },
             { test: /\.js$/, loader: "source-map-loader" },
         ],
     },
@@ -34,6 +35,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './wwwroot/dist'),
+        publicPath: '/dist/',
         filename: "[name].bundle.js",
         clean: true
     },

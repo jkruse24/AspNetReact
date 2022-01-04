@@ -1,7 +1,8 @@
 ﻿import React, { ReactElement, useState } from 'react'
 import CSS from 'csstype'
+import { hot } from 'react-hot-loader'
 
-export default function ButtonCounterComponent(): ReactElement {
+function ButtonCounterComponent(): ReactElement {
     const [counter, setCounter] = useState(0)
     let buttonStyle: CSS.Properties = {
         marginRight: '5px'
@@ -13,4 +14,6 @@ export default function ButtonCounterComponent(): ReactElement {
             <label htmlFor="counterButton">Count: {counter}</label>
         </>
     )
-}
+}   
+
+export default hot(module)(ButtonCounterComponent);
